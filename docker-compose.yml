@@ -1,0 +1,13 @@
+version: '3.2'
+
+services:
+  webhook:
+    build: .
+    restart: unless-stopped
+    environment:
+      - DIFFHEST_PHABRICATOR_URL
+      - DIFFHEST_PHABRICATOR_TOKEN
+      - DIFFHEST_PHABRICATOR_HMAC
+      - DIFFHEST_PORT
+    ports:
+      - 8771:8080
